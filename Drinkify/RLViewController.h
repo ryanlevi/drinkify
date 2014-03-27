@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface RLViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextField *searchBar;
+- (IBAction)searchButton:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextView *searchResults;
+@property (weak, nonatomic) IBOutlet UITextView *searchResultsHeader;
 
 @end

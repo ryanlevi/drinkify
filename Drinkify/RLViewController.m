@@ -8,8 +8,6 @@
 
 #import "RLViewController.h"
 #import "TFHpple.h"
-#import "RLSetup.h"
-#import "RLContributor.h"
 
 @interface RLViewController ()
 
@@ -29,4 +27,29 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)searchButton:(id)sender {
+    NSString * url = [NSString stringWithFormat:@"http://drinkify.org/%@", [_searchBar.text stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    NSURL *tutorialsUrl = [NSURL URLWithString:url];
+    NSData *tutorialsHtmlData = [NSData dataWithContentsOfURL:tutorialsUrl];
+    
+    TFHpple *tutorialsParser = [TFHpple hppleWithHTMLData:tutorialsHtmlData];
+
+    NSString *tutorialsXpathQueryString = @"//div[@id='recipeContent']";
+    NSArray *tutorialsNodes = [tutorialsParser searchWithXPathQuery:tutorialsXpathQueryString];
+    TFHppleElement * element = [tutorialsNodes objectAtIndex:0];
+    TFHppleElement * recipe = [element firstChildWithTagName:@"ul"];
+//    TFHppleElement *r = [recipe children][1];
+    
+    NSMutableString * result = [[NSMutableString alloc] init];
+    for(TFHppleElement *i in [recipe children]){
+        for (TFHppleElement *e in [i children]) {
+            [result appendString:@"\u00b7 "];
+            [result appendString:[e content]];
+            [result appendString:@"\n"];
+        }
+    }
+
+    [_searchResultsHeader setText:[NSString stringWithFormat:@"The \"%@\"", _searchBar.text]];
+    [_searchResults setText:result];
+}
 @end
