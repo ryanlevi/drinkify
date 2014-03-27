@@ -7,6 +7,9 @@
 //
 
 #import "RLViewController.h"
+#import "TFHpple.h"
+#import "RLSetup.h"
+#import "RLContributor.h"
 
 @interface RLViewController ()
 

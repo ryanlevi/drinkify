@@ -21,6 +21,12 @@
 		94E9CAFC18E3D2C500A7BB97 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94E9CADE18E3D2C300A7BB97 /* UIKit.framework */; };
 		94E9CB0418E3D2C500A7BB97 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 94E9CB0218E3D2C500A7BB97 /* InfoPlist.strings */; };
 		94E9CB0618E3D2C500A7BB97 /* DrinkifyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E9CB0518E3D2C500A7BB97 /* DrinkifyTests.m */; };
+		94E9CB1518E3D4F300A7BB97 /* RLSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E9CB1418E3D4F300A7BB97 /* RLSetup.m */; };
+		94E9CB1818E3D53900A7BB97 /* RLContributor.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E9CB1718E3D53900A7BB97 /* RLContributor.m */; };
+		94E9CB2018E3D6A500A7BB97 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E9CB1B18E3D6A500A7BB97 /* TFHpple.m */; };
+		94E9CB2118E3D6A500A7BB97 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E9CB1D18E3D6A500A7BB97 /* TFHppleElement.m */; };
+		94E9CB2218E3D6A500A7BB97 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E9CB1F18E3D6A500A7BB97 /* XPathQuery.m */; };
+		94E9CB2418E3D72500A7BB97 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 94E9CB2318E3D72500A7BB97 /* libxml2.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +59,17 @@
 		94E9CB0118E3D2C500A7BB97 /* DrinkifyTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DrinkifyTests-Info.plist"; sourceTree = "<group>"; };
 		94E9CB0318E3D2C500A7BB97 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		94E9CB0518E3D2C500A7BB97 /* DrinkifyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrinkifyTests.m; sourceTree = "<group>"; };
+		94E9CB1318E3D4F300A7BB97 /* RLSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RLSetup.h; sourceTree = "<group>"; };
+		94E9CB1418E3D4F300A7BB97 /* RLSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RLSetup.m; sourceTree = "<group>"; };
+		94E9CB1618E3D53900A7BB97 /* RLContributor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RLContributor.h; sourceTree = "<group>"; };
+		94E9CB1718E3D53900A7BB97 /* RLContributor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RLContributor.m; sourceTree = "<group>"; };
+		94E9CB1A18E3D6A500A7BB97 /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
+		94E9CB1B18E3D6A500A7BB97 /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = "<group>"; };
+		94E9CB1C18E3D6A500A7BB97 /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHppleElement.h; sourceTree = "<group>"; };
+		94E9CB1D18E3D6A500A7BB97 /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
+		94E9CB1E18E3D6A500A7BB97 /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
+		94E9CB1F18E3D6A500A7BB97 /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
+		94E9CB2318E3D72500A7BB97 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94E9CB2418E3D72500A7BB97 /* libxml2.dylib in Frameworks */,
 				94E9CADD18E3D2C300A7BB97 /* CoreGraphics.framework in Frameworks */,
 				94E9CADF18E3D2C300A7BB97 /* UIKit.framework in Frameworks */,
 				94E9CADB18E3D2C300A7BB97 /* Foundation.framework in Frameworks */,
@@ -101,6 +119,7 @@
 		94E9CAD918E3D2C300A7BB97 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				94E9CB2318E3D72500A7BB97 /* libxml2.dylib */,
 				94E9CADA18E3D2C300A7BB97 /* Foundation.framework */,
 				94E9CADC18E3D2C300A7BB97 /* CoreGraphics.framework */,
 				94E9CADE18E3D2C300A7BB97 /* UIKit.framework */,
@@ -112,6 +131,8 @@
 		94E9CAE018E3D2C300A7BB97 /* Drinkify */ = {
 			isa = PBXGroup;
 			children = (
+				94E9CB1918E3D64400A7BB97 /* hpple */,
+				94E9CB0F18E3D38200A7BB97 /* Model */,
 				94E9CAE918E3D2C300A7BB97 /* RLAppDelegate.h */,
 				94E9CAEA18E3D2C300A7BB97 /* RLAppDelegate.m */,
 				94E9CAEC18E3D2C400A7BB97 /* Main.storyboard */,
@@ -150,6 +171,30 @@
 				94E9CB0218E3D2C500A7BB97 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		94E9CB0F18E3D38200A7BB97 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				94E9CB1318E3D4F300A7BB97 /* RLSetup.h */,
+				94E9CB1418E3D4F300A7BB97 /* RLSetup.m */,
+				94E9CB1618E3D53900A7BB97 /* RLContributor.h */,
+				94E9CB1718E3D53900A7BB97 /* RLContributor.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		94E9CB1918E3D64400A7BB97 /* hpple */ = {
+			isa = PBXGroup;
+			children = (
+				94E9CB1A18E3D6A500A7BB97 /* TFHpple.h */,
+				94E9CB1B18E3D6A500A7BB97 /* TFHpple.m */,
+				94E9CB1C18E3D6A500A7BB97 /* TFHppleElement.h */,
+				94E9CB1D18E3D6A500A7BB97 /* TFHppleElement.m */,
+				94E9CB1E18E3D6A500A7BB97 /* XPathQuery.h */,
+				94E9CB1F18E3D6A500A7BB97 /* XPathQuery.m */,
+			);
+			name = hpple;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,8 +296,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				94E9CAEB18E3D2C300A7BB97 /* RLAppDelegate.m in Sources */,
+				94E9CB2118E3D6A500A7BB97 /* TFHppleElement.m in Sources */,
+				94E9CB2218E3D6A500A7BB97 /* XPathQuery.m in Sources */,
+				94E9CB2018E3D6A500A7BB97 /* TFHpple.m in Sources */,
 				94E9CAE718E3D2C300A7BB97 /* main.m in Sources */,
+				94E9CB1818E3D53900A7BB97 /* RLContributor.m in Sources */,
 				94E9CAF118E3D2C400A7BB97 /* RLViewController.m in Sources */,
+				94E9CB1518E3D4F300A7BB97 /* RLSetup.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +429,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Drinkify/Drinkify-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = "Drinkify/Drinkify-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -392,6 +443,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Drinkify/Drinkify-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = "Drinkify/Drinkify-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
