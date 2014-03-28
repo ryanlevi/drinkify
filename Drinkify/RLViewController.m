@@ -29,16 +29,24 @@
 
 - (IBAction)searchButton:(id)sender {
     NSString * url = [NSString stringWithFormat:@"http://drinkify.org/%@", [_searchBar.text stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-    NSURL *tutorialsUrl = [NSURL URLWithString:url];
-    NSData *tutorialsHtmlData = [NSData dataWithContentsOfURL:tutorialsUrl];
+    NSURL *drinkifyUrl = [NSURL URLWithString:url];
+    NSData *drinkifyHtmlData = [NSData dataWithContentsOfURL:drinkifyUrl];
+    [_searchResultsHeader setFont:[UIFont fontWithName:@"Futura" size:20.0]];
     
-    TFHpple *tutorialsParser = [TFHpple hppleWithHTMLData:tutorialsHtmlData];
+    if(drinkifyHtmlData == nil){
+        [_searchResultsHeader setText:[NSString stringWithFormat:@"%@ not found", _searchBar.text]];
+        [_searchResults setText:@""];
+        return;
+    }
+    
+    [_searchResults setFont:[UIFont fontWithName:@"Futura" size:16.0]];
+    TFHpple *drinkifyParser = [TFHpple hppleWithHTMLData:drinkifyHtmlData];
 
-    NSString *tutorialsXpathQueryString = @"//div[@id='recipeContent']";
-    NSArray *tutorialsNodes = [tutorialsParser searchWithXPathQuery:tutorialsXpathQueryString];
-    TFHppleElement * element = [tutorialsNodes objectAtIndex:0];
+    NSString *drinkifyXpathQueryString = @"//div[@id='recipeContent']";
+    NSArray *drinkifyNodes = [drinkifyParser searchWithXPathQuery:drinkifyXpathQueryString];
+    TFHppleElement * element = [drinkifyNodes objectAtIndex:0];
+    NSString * drinkName = [[element firstChildWithTagName:@"h2"] text];
     TFHppleElement * recipe = [element firstChildWithTagName:@"ul"];
-//    TFHppleElement *r = [recipe children][1];
     
     NSMutableString * result = [[NSMutableString alloc] init];
     for(TFHppleElement *i in [recipe children]){
@@ -49,7 +57,7 @@
         }
     }
 
-    [_searchResultsHeader setText:[NSString stringWithFormat:@"The \"%@\"", _searchBar.text]];
+    [_searchResultsHeader setText:drinkName];
     [_searchResults setText:result];
 }
 @end
