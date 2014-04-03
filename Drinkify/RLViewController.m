@@ -28,18 +28,18 @@
 }
 
 - (IBAction)searchButton:(id)sender {
+    if([_searchBar.text isEqualToString:@""]) return;
     NSString * url = [NSString stringWithFormat:@"http://drinkify.org/%@", [_searchBar.text stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSURL *drinkifyUrl = [NSURL URLWithString:url];
     NSData *drinkifyHtmlData = [NSData dataWithContentsOfURL:drinkifyUrl];
-    [_searchResultsHeader setFont:[UIFont fontWithName:@"Futura" size:20.0]];
     
     if(drinkifyHtmlData == nil){
         [_searchResultsHeader setText:[NSString stringWithFormat:@"%@ not found", _searchBar.text]];
         [_searchResults setText:@""];
+        [_searchResultsHeader setFont:[UIFont fontWithName:@"Futura-Medium" size:20.0]];
         return;
     }
     
-    [_searchResults setFont:[UIFont fontWithName:@"Futura" size:16.0]];
     TFHpple *drinkifyParser = [TFHpple hppleWithHTMLData:drinkifyHtmlData];
 
     NSString *drinkifyXpathQueryString = @"//div[@id='recipeContent']";
@@ -56,8 +56,15 @@
             [result appendString:@"\n"];
         }
     }
+    NSString *instructions = [[element firstChildWithTagName:@"p"] text];
+    NSString *drinkInstructions = [instructions stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    [result appendString:drinkInstructions];
 
     [_searchResultsHeader setText:drinkName];
+    [_searchResultsHeader setFont:[UIFont fontWithName:@"Futura-Medium" size:20.0]];
     [_searchResults setText:result];
+    [_searchResults setFont:[UIFont fontWithName:@"Futura-Medium" size:16.0]];
+    
+    [_searchBar resignFirstResponder];
 }
 @end
